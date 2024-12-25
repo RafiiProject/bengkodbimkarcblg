@@ -25,7 +25,7 @@
             if ($result->num_rows > 0) {
                 $data = $result->fetch_assoc();
 
-                // Verifikasi password hash
+                // Verifikasi password has
                 if (password_verify($password, $data['password'])) {
                     $_SESSION['id'] = $data['id'];
                     $_SESSION['username'] = $data['nama'];
