@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Validasi input tidak kosong
     if (empty($nama) || empty($no_ktp) || empty($alamat) || empty($no_hp) || empty($password)) {
-        echo '<script>alert("Semua kolom harus diisi!");window.location.href="registerPasien.php";</script>';
+        echo '<script>alert("Semua kolom harus diisi!");window.location.href="register.php";</script>';
         exit();
     }
 
@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $cekNoKTP = "SELECT * FROM pasien WHERE no_ktp = '$no_ktp'";
     $queryCekKTP = mysqli_query($mysqli, $cekNoKTP);
     if (mysqli_num_rows($queryCekKTP) > 0) {
-        echo '<script>alert("No KTP telah terdaftar sebelumnya");window.location.href="registerPasien.php";</script>';
+        echo '<script>alert("No KTP telah terdaftar sebelumnya");window.location.href="register.php";</script>';
         exit();
     }
 
@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($queryInsert) {
         echo '<script>alert("Pendaftaran akun berhasil");window.location.href="loginPasien.php";</script>';
     } else {
-        echo '<script>alert("Pendaftaran akun gagal: ' . mysqli_error($mysqli) . '");window.location.href="registerPasien.php";</script>';
+        echo '<script>alert("Pendaftaran akun gagal: ' . mysqli_error($mysqli) . '");window.location.href="register.php";</script>';
     }
 }
 

@@ -1,5 +1,4 @@
 <?php
-
 require '../../koneksi.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -8,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $alamat = $_POST["alamat"];
     $no_hp = $_POST["no_hp"];
     $poli = $_POST["poli"];
-    $hashed_password = md5($nama); // Hash password (gunakan hash lebih aman seperti password_hash)
+    $hashed_password = password_hash($nama, PASSWORD_DEFAULT); // Hash password menggunakan password_hash
 
     // Validasi input tidak kosong
     if (empty($nama) || empty($alamat) || empty($no_hp) || empty($poli)) {
