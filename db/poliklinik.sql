@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 30 Des 2024 pada 13.03
+-- Waktu pembuatan: 30 Des 2024 pada 13.26
 -- Versi server: 10.4.21-MariaDB
 -- Versi PHP: 8.0.11
 
@@ -104,13 +104,13 @@ CREATE TABLE `dokter` (
 INSERT INTO `dokter` (`id`, `nama`, `alamat`, `no_hp`, `id_poli`, `password`, `role`) VALUES
 (1, 'drFarida', 'jl.merdeka pelajar', '0813324324324', 1, '32d4b77ebea7f1c5798381262b43c206', 'dokter'),
 (2, 'zidni', 'jl pengurahan', '085553464774', 1, 'a9ea96e1d699281472715bfdb86a06ad', 'dokter'),
-(3, 'rafi', 'jl mawar', '3463749', 1, '$2y$10$3xnzrcb.nuCd5tEQEBiQPeTgngRC8zHQ9zT9YsGAtIfgBCycrAHE6', 'dokter'),
+(3, 'rafi', 'jl mawar putih', '3463749', 1, '$2y$10$40e453/ySH4LE5jMY1HLkumFobIZdk3XSnQsUd/wFbwNVFMHDhDda', 'dokter'),
 (10, 'acenk', 'aaaa', '4294967295', 1, '$2y$10$AMWCcKt0kBZQixaepMfYhOWeJEU1DdU3GG36wAkBA.q86L0KMT5pi', 'dokter'),
 (13, 'ali', 'gdfgdgdfg', '087885343219', 1, '$2y$10$RPjwB4UD5rwO1e5lPnw10.SDxTRm2t59oPhy3e6OloEPbP2Aw.0iq', 'dokter'),
 (14, 'adi', 'jl.imam bonjol', '87786666', 1, 'c46335eb267e2e1cde5b017acb4cd799', 'dokter'),
 (15, 'dedi', 'jl.melayu', '0812297654213', 1, 'c5897fbcc14ddcf30dca31b2735c3d7e', 'dokter'),
 (17, 'heri', 'jl. gasal', '081567678155', 1, '6812af90c6a1bbec134e323d7e70587b', 'dokter'),
-(18, 'jordi', 'jl.malaya', '0896999779449', 3, '$2y$10$FeNYdueK1/aYiLO6QGPb6uuzNIjx3zsziHJ7ZijMo2E7dQgvorD6u', 'dokter'),
+(18, 'jordi', 'jl.malaya', '0896999779449', 3, '$2y$10$LclZISofWehfya/HqD9tKO7x7Sb6BN.xKkWu3z8N5x4ZN3ZC7l9kG', 'dokter'),
 (20, 'valey', 'jl merpati', '0874564564', 3, '$2y$10$lE493oHGpZ2K3Qfac.mAyevB7BIqbBMbtXD.Pf9jhFA/krxzwXXta', 'dokter');
 
 -- --------------------------------------------------------
@@ -140,10 +140,10 @@ INSERT INTO `jadwal_periksa` (`id`, `id_dokter`, `hari`, `jam_mulai`, `jam_seles
 (11, 3, 'Senin', '00:00:00', '03:00:00', '2', 'N'),
 (12, 18, 'Senin', '08:00:00', '10:00:00', '2', '1'),
 (13, 2, 'Senin', '09:00:00', '12:00:00', '2', '1'),
-(14, 3, 'Senin', '08:00:00', '10:00:00', '2', 'N'),
+(14, 3, 'Senin', '08:00:00', '10:00:00', '2', '1'),
 (15, 3, 'Sabtu', '08:00:00', '11:00:00', '2', 'N'),
 (16, 3, 'Sabtu', '15:00:00', '17:00:00', '2', 'N'),
-(17, 3, 'Rabu', '14:00:00', '16:00:00', '2', '1');
+(17, 3, 'Rabu', '14:00:00', '16:00:00', '2', 'N');
 
 -- --------------------------------------------------------
 
