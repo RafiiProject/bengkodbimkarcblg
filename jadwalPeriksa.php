@@ -78,14 +78,7 @@ if (empty($username)) {
         </aside>
         <!-- /.control-sidebar -->
 
-        <!-- Footer -->
-        <footer class="main-footer">
-            <div class="float-right d-none d-sm-inline">
-                Anything you want
-            </div>
-            <strong>&copy; 2024 Udinus Poliklinik.</strong> All rights reserved.
-        </footer>
-        <!-- /.footer -->
+        
     </div>
     <!-- ./wrapper -->
 

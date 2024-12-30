@@ -25,7 +25,7 @@ if (!$stmt) {
 
 mysqli_stmt_bind_param($stmt, 'i', $idDokter);
 mysqli_stmt_execute($stmt);
-mysqli_stmt_bind_result($stmt, $nama, $alamat, $no_hp, $password);
+mysqli_stmt_bind_result($stmt, $nama, $alamat, $no_hp, $passwordHash);
 
 if (!mysqli_stmt_fetch($stmt)) {
     die("Data dokter tidak ditemukan!");
@@ -40,13 +40,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $teleponBaru = $_POST['no_hp'];
     $passwordBaru = $_POST['password'];
 
-    // Jika password kosong, gunakan nama sebagai default password
-    if (empty($passwordBaru)) {
-        $passwordBaru = $namaBaru;
+    // Cek apakah password baru diisi
+    if (!empty($passwordBaru)) {
+        // Enkripsi password baru
+        $passwordHashBaru = password_hash($passwordBaru, PASSWORD_DEFAULT);
+    } else {
+        // Gunakan password lama jika tidak diisi
+        $passwordHashBaru = $passwordHash;
     }
-
-    // Enkripsi password baru
-    $passwordHash = password_hash($passwordBaru, PASSWORD_DEFAULT);
 
     $updateQuery = "UPDATE dokter SET nama = ?, alamat = ?, no_hp = ?, password = ? WHERE id = ?";
     $stmtUpdate = mysqli_prepare($mysqli, $updateQuery);
@@ -55,13 +56,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         die("Query gagal dipersiapkan: " . mysqli_error($mysqli));
     }
 
-    mysqli_stmt_bind_param($stmtUpdate, 'ssssi', $namaBaru, $alamatBaru, $teleponBaru, $passwordHash, $idDokter);
+    mysqli_stmt_bind_param($stmtUpdate, 'ssssi', $namaBaru, $alamatBaru, $teleponBaru, $passwordHashBaru, $idDokter);
 
     if (mysqli_stmt_execute($stmtUpdate)) {
-        echo '<script>alert("Profil dan password berhasil diperbarui!");</script>';
+        echo '<script>alert("Profil berhasil diperbarui!");</script>';
         header("Refresh:0");
     } else {
-        echo '<script>alert("Gagal memperbarui profil atau password!");</script>';
+        echo '<script>alert("Gagal memperbarui profil!");</script>';
     }
 
     mysqli_stmt_close($stmtUpdate);
