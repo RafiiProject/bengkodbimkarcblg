@@ -76,4 +76,4 @@ lalu run localhost dan folder yang dituju semisalkan
 
 http://localhost/<nama-folder-proyek>
 
-contoh://localhost/poliklinik
+contoh://localhost/BengkodBimkar
