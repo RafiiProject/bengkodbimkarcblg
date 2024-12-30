@@ -78,8 +78,18 @@ $user = "root";             // Nama pengguna database (default: 'root' untuk XAM
 $password = "";             // Kata sandi database (kosong untuk XAMPP/WAMP)
 $dbname = "database_anda";  // Nama database yang Anda buat
 
-lalu run localhost dan folder yang dituju semisalkan
+## Jalankan Aplikasi
+
+Buka Browser web
+
+lalu run localhost dan folder yang dituju dengan mengakses urlberikut
+
+semisalkan=
 
 http://localhost/<nama-folder-proyek>
 
-contoh://localhost/BengkodBimkar
+#### Ganti <nama-folder-proyek> dengan nama direktori proyek Anda.
+
+contoh:
+
+http://localhost/BengkodBimkar
