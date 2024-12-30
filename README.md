@@ -35,11 +35,17 @@ Sebelum menjalankan aplikasi, pastikan Anda telah menginstal perangkat berikut:
 
 ### 1. Unduh proyek dari github
 
-Unduh atau proyek dari github ke komputer Anda.download ZIP BengkodBimkar
+Unduh file atau proyek dari github ke komputer Anda.download ZIP BengkodBimkar
 
 extract dan 
 
 Letakkan folder proyek ke direktori `htdocs` (untuk XAMPP)
+
+folder htdocs berada di dalam folder directori C
+
+contoh =
+ C:\xampp\htdocs
+
 
 ### 2. Jalankan Server Lokal
 
@@ -64,7 +70,7 @@ http://localhost/phpmyadmin
 
 ### 4. Konfigurasi Koneksi Database
 
-Buka file `koneksi.php` di vsCode, lalu sesuaikan pengaturan berikut jika diperlukan:
+Buka file `koneksi.php` di vsCode, lalu sesuaikan pengaturan berikut JIKA DIPERLUKAN:
 
 ```php
 $host = "localhost";        // Host database
