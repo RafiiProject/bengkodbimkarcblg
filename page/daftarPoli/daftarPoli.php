@@ -2,8 +2,8 @@
 require '../../koneksi.php';
 
 // Ambil data poli untuk dropdown
-$queryPoli = "SELECT id, nama FROM poli WHERE aktif = '1'";
-$resultPoli = mysqli_query($mysqli, $queryPoli);
+//$queryPoli = "SELECT id, nama FROM poli WHERE aktif = '1'";
+//$resultPoli = mysqli_query($mysqli, $queryPoli);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $no_rm = $_POST['no_rm'];
